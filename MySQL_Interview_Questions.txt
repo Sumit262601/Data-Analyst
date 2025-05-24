@@ -1,0 +1,84 @@
+MySQL Interview Questions - Most Commonly Asked
+===============================================
+
+🔰 Basic MySQL Interview Questions
+----------------------------------
+1. What is MySQL?
+   - MySQL is an open-source relational database management system based on SQL.
+
+2. What is the difference between SQL and MySQL?
+   - SQL is a query language; MySQL is a database system that uses SQL.
+
+3. What are the types of SQL commands?
+   - DDL (CREATE, DROP), DML (INSERT, UPDATE), DCL (GRANT), TCL (COMMIT), DQL (SELECT)
+
+4. What is a Primary Key?
+   - A unique identifier for a row that cannot be NULL.
+
+5. What is a Foreign Key?
+   - A key used to link two tables.
+
+6. What is a Unique Key?
+   - Ensures all values in a column are distinct (can include NULLs).
+
+7. Difference between WHERE and HAVING?
+   - WHERE filters rows before grouping; HAVING filters after grouping.
+
+🔄 Joins & Relationships
+------------------------
+8. Types of joins in MySQL:
+   - INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, CROSS JOIN, SELF JOIN
+
+9. Difference between INNER JOIN and LEFT JOIN?
+
+10. How to implement many-to-many relationships?
+    - Using a junction table with foreign keys.
+
+11. What is a Self Join?
+    - A table joined to itself.
+
+⚙️ Indexes, Views, Constraints
+------------------------------
+12. What is an Index?
+    - Improves query performance by indexing columns.
+
+13. Clustered vs Non-Clustered Index?
+    - MySQL’s InnoDB uses clustered index by default (PRIMARY KEY).
+
+14. What is a View?
+    - A virtual table created from a SELECT query.
+
+15. What are Constraints?
+    - PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, DEFAULT.
+
+📊 Advanced Concepts
+--------------------
+16. What is Normalization?
+    - Organizing data to reduce redundancy.
+
+17. What is Denormalization?
+    - Combining tables for performance at the cost of redundancy.
+
+18. Difference between TRUNCATE and DELETE?
+    - DELETE is DML (can filter); TRUNCATE is DDL (faster, removes all rows).
+
+19. Difference between UNION and UNION ALL?
+    - UNION removes duplicates; UNION ALL keeps all rows.
+
+20. What are Stored Procedures and Triggers?
+    - Stored Procedure: A stored SQL block.
+    - Trigger: Auto-executed SQL on table events.
+
+21. What are Transactions?
+    - A sequence of SQL statements treated as a unit. (BEGIN, COMMIT, ROLLBACK)
+
+22. What is ACID?
+    - Atomicity, Consistency, Isolation, Durability — properties of reliable transactions.
+
+🧪 Practical Scenarios
+-----------------------
+1. Query to fetch second-highest salary.
+2. Find duplicate records in a table.
+3. Customers who did not place any orders.
+4. Top 3 highest selling products.
+5. Total revenue per customer.
