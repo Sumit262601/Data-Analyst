@@ -106,7 +106,7 @@ SELECT MIN(Amount) FROM Products;
 -- MAX()
 SELECT MAX(Amount) FROM Products;
 
--- GROUP BY
+-- GROUP BY / HAVING
 SELECT Category, SUM(Amount)
 FROM Products
 GROUP BY Category
