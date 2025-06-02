@@ -57,26 +57,34 @@ Automatically broadcasts values if dimensions match
 Interview Questions
 Q: What happens when axis=None in np.insert()?
 
-A: The array is flattened before insertion
+    A: The array is flattened before insertion
 Q: Can you insert multiple values at different positions?
 
-A: Yes, using arrays for both positions and values
+    A: Yes, using arrays for both positions and values
 Q: What's the difference between insert and append?
 
-A: Insert adds elements at specified positions, append adds at the end
+    A: Insert adds elements at specified positions, append adds at the end
+
 Best Practices
-Always verify array dimensions before insertion
-Use appropriate axis parameter for multi-dimensional arrays
-Consider memory efficiency for large arrays
-Check output shape after insertion
+    Always verify array dimensions before insertion
+    Use appropriate axis parameter for multi-dimensional arrays
+    Consider memory efficiency for large arrays
+    Check output shape after insertion
+
 Common Use Cases
-Data augmentation
-Feature engineering
-Time series data modification
-Matrix manipulation
+    Data augmentation
+    Feature engineering
+    Time series data modification
+    Matrix manipulation
+    Image processing
+    Signal processing
+    Audio processing
+    Video processing
+
 Performance Tips
-Pre-allocate arrays when possible
-Use batch insertions instead of multiple single insertions
-Consider alternative methods for large-scale operations
-Use appropriate data types to save memory
+    Pre-allocate arrays when possible
+    Use batch insertions instead of multiple single insertions
+    Consider alternative methods for large-scale operations
+    Use appropriate data types to save memory
+
 Remember: insert() always returns a new array, the original array remains unchanged."""
