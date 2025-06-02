@@ -130,3 +130,154 @@ col = arr[:, 1]  # [2, 5, 8]
 3. Use `np.info()` for function documentation
 4. Check memory usage with `array.nbytes`
 5. Use `np.shares_memory()` to check array views
+
+# NumPy Complete Topics Index
+
+## 1. Array Basics
+- Creating Arrays
+  - np.array()
+  - np.zeros()
+  - np.ones()
+  - np.empty()
+  - np.arange()
+  - np.linspace()
+  
+## 2. Array Operations
+- Basic Operations
+  - Addition
+  - Subtraction
+  - Multiplication
+  - Division
+- Universal Functions (ufunc)
+  - np.sum()
+  - np.mean()
+  - np.max()
+  - np.min()
+
+## 3. Array Indexing & Slicing
+- Basic Indexing
+- Boolean Indexing
+- Fancy Indexing
+- Array Slicing
+- Index Tricks
+
+## 4. Array Shape Manipulation
+- Reshaping Arrays
+- Stacking Arrays
+  - np.vstack()
+  - np.hstack()
+  - np.concatenate()
+- Splitting Arrays
+  - np.split()
+  - np.vsplit()
+  - np.hsplit()
+
+## 5. Linear Algebra
+- Matrix Operations
+  - Matrix Multiplication
+  - Transpose
+  - Inverse
+- Eigenvalues & Eigenvectors
+- Matrix Decomposition
+  - LU Decomposition
+  - QR Decomposition
+  - SVD
+
+## 6. Statistics
+- Descriptive Statistics
+  - Mean
+  - Median
+  - Standard Deviation
+  - Variance
+- Correlation & Covariance
+- Histograms
+- Random Number Generation
+
+## 7. File Operations
+- Loading Data
+  - np.loadtxt()
+  - np.genfromtxt()
+- Saving Data
+  - np.save()
+  - np.savez()
+  - np.savetxt()
+
+## 8. Advanced Topics
+- Broadcasting
+- Structured Arrays
+- Memory Management
+- Performance Optimization
+- Vectorization
+
+## 9. Integration with Other Libraries
+- Pandas Integration
+- Matplotlib Integration
+- SciPy Integration
+
+## 10. Data Processing
+- Data Cleaning
+- Missing Values
+- Data Transformation
+- Data Normalization
+
+## 11. Mathematical Functions
+- Trigonometric Functions
+- Exponential & Logarithmic
+- Rounding Functions
+- Complex Numbers
+
+## 12. Array Iteration
+- np.nditer()
+- Broadcasting Iterator
+- Buffer Iterator
+
+## 13. Set Operations
+- np.unique()
+- np.intersect1d()
+- np.union1d()
+- np.setdiff1d()
+
+## 14. Sorting & Searching
+- np.sort()
+- np.argsort()
+- np.searchsorted()
+- np.argmax()/argmin()
+
+## 15. Binary Operations
+- Bitwise Operations
+- Comparison Operations
+- Logical Operations
+
+## Quick Reference Links
+1. [Official NumPy Documentation](https://numpy.org/doc/)
+2. [NumPy User Guide](https://numpy.org/doc/stable/user/)
+3. [NumPy Reference](https://numpy.org/doc/stable/reference/)
+
+## Code Examples Repository Structure
+```
+numpy/
+├── basics/
+│   ├── array_creation.py
+│   ├── array_operations.py
+│   └── indexing_slicing.py
+├── advanced/
+│   ├── broadcasting.py
+│   ├── vectorization.py
+│   └── memory_management.py
+├── math/
+│   ├── linear_algebra.py
+│   ├── statistics.py
+│   └── mathematical_functions.py
+└── data_processing/
+    ├── file_operations.py
+    ├── data_cleaning.py
+    └── data_transformation.py
+```
+
+Each topic contains:
+1. Theory explanation
+2. Basic examples
+3. Advanced use cases
+4. Common pitfalls
+5. Best practices
+6. Performance considerations
