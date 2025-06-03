@@ -87,6 +87,24 @@ FROM Orders o
 JOIN Products p ON o.ProductID = p.ProductID
 ORDER BY Amount ASC;
 
+-- Show the name of each customer along with the amount of their orders.
+select c.Name AS CustomerName, SUM(p.Price * o.Quantity) AS TotalAmount
+from orders o
+join customers c ON o.CustomerID = c.CustomerID
+join products p ON o.ProductID = p.ProductID
+group by c.Name;
+
+-- Show customers whose total order amount exceeds 500.
+select c.Name AS CustomerName, SUM(p.Price * o.Quantity) AS TotalAmount
+from orders o
+join customers c ON o.CustomerID = c.CustomerID
+join products p ON o.ProductID = p.ProductID
+group by c.Name
+having SUM(p.Price * o.Quantity) > 500;
+
+
+
+
 
 
 
