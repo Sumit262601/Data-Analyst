@@ -58,7 +58,7 @@ FROM customers cu
 LEFT JOIN orders od ON cu.customer_id = od.customer_id
 WHERE City="Hyderabad"
 GROUP BY cu.customer_id, cu.name, cu.city
-HAVING SUM(od.amount) = 10000;
+HAVING SUM(od.amount) > 10000;
 
 select (
 	select name from Customers
