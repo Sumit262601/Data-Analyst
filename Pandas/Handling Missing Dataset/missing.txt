@@ -1,0 +1,6 @@
+NaN (Not a Number)
+None (for oobject data type)
+
+isnull()
+True - NaN is missing
+False - Valuse is present
