@@ -60,6 +60,90 @@ row = arr[1, :]  # [4, 5, 6]
 col = arr[:, 1]  # [2, 5, 8]
 ```
 
+---
+
+## All Major Methods and Features in NumPy
+
+### Array Creation
+- `np.array()`, `np.asarray()`
+- `np.zeros()`, `np.ones()`, `np.full()`, `np.empty()`
+- `np.arange()`, `np.linspace()`, `np.logspace()`
+- `np.eye()`, `np.identity()`, `np.diag()`
+- `np.fromfunction()`, `np.fromiter()`, `np.frombuffer()`
+
+### Array Attributes
+- `ndarray.shape`, `ndarray.ndim`, `ndarray.size`, `ndarray.dtype`, `ndarray.itemsize`, `ndarray.nbytes`, `ndarray.T` (transpose), `ndarray.strides`, `ndarray.flags`
+
+### Array Manipulation
+- Reshape: `reshape()`, `ravel()`, `flatten()`, `resize()`
+- Transpose: `transpose()`, `swapaxes()`, `moveaxis()`
+- Stacking: `vstack()`, `hstack()`, `dstack()`, `column_stack()`, `row_stack()`
+- Splitting: `split()`, `hsplit()`, `vsplit()`, `dsplit()`
+- Repeat & Tile: `repeat()`, `tile()`
+- Broadcasting: automatic with compatible shapes
+
+### Indexing, Slicing, and Iterating
+- Basic, advanced, boolean, and fancy indexing
+- `np.where()`, `np.nonzero()`, `np.argwhere()`
+- `np.take()`, `np.put()`, `np.choose()`
+- Iteration: `nditer()`, `ndenumerate()`, `ndindex()`
+
+### Universal Functions (ufuncs)
+- Arithmetic: `add()`, `subtract()`, `multiply()`, `divide()`, `power()`, `mod()`
+- Trigonometric: `sin()`, `cos()`, `tan()`, `arcsin()`, `arccos()`, `arctan()`
+- Exponential & Logarithmic: `exp()`, `log()`, `log10()`, `log2()`
+- Rounding: `round()`, `floor()`, `ceil()`, `trunc()`
+- Aggregation: `sum()`, `prod()`, `mean()`, `std()`, `var()`, `min()`, `max()`, `argmin()`, `argmax()`, `median()`, `percentile()`, `cumsum()`, `cumprod()`
+
+### Linear Algebra
+- `dot()`, `vdot()`, `inner()`, `outer()`, `matmul()`
+- `linalg.inv()`, `linalg.pinv()`, `linalg.det()`, `linalg.matrix_rank()`
+- `linalg.eig()`, `linalg.eigh()`, `linalg.eigvals()`
+- `linalg.svd()`, `linalg.qr()`, `linalg.cholesky()`, `linalg.lstsq()`
+- `linalg.solve()`, `linalg.norm()`, `linalg.trace()`
+
+### Random Module
+- `random.rand()`, `random.randn()`, `random.randint()`, `random.choice()`, `random.shuffle()`, `random.permutation()`
+- `random.seed()`, `random.uniform()`, `random.normal()`, `random.binomial()`, `random.beta()`, `random.gamma()`, `random.poisson()`
+
+### Statistics
+- `mean()`, `median()`, `std()`, `var()`, `ptp()`, `percentile()`, `quantile()`, `corrcoef()`, `cov()`, `histogram()`, `bincount()`
+
+### Set Operations
+- `unique()`, `intersect1d()`, `union1d()`, `setdiff1d()`, `setxor1d()`, `in1d()`, `isin()`
+
+### Sorting, Searching, and Counting
+- `sort()`, `argsort()`, `lexsort()`, `searchsorted()`, `argmax()`, `argmin()`, `count_nonzero()`
+
+### File I/O
+- `loadtxt()`, `genfromtxt()`, `savetxt()`
+- `save()`, `savez()`, `savez_compressed()`, `load()`
+- `fromfile()`, `tofile()`
+
+### Masked Arrays
+- `np.ma.masked_array()`, `np.ma.masked_where()`, `np.ma.masked_equal()`, `np.ma.masked_greater()`, `np.ma.filled()`
+
+### Structured Arrays & Record Arrays
+- Custom dtypes, `np.recarray()`, field access
+
+### Memory Management
+- `np.copy()`, `np.view()`, `np.shares_memory()`, `np.may_share_memory()`
+
+### Miscellaneous
+- `np.clip()`, `np.round()`, `np.isnan()`, `np.isinf()`, `np.isfinite()`
+- `np.vectorize()`, `np.apply_along_axis()`, `np.apply_over_axes()`
+- `np.broadcast()`, `np.broadcast_to()`, `np.broadcast_arrays()`
+- `np.meshgrid()`, `np.mgrid`, `np.ogrid`
+- `np.diff()`, `np.gradient()`, `np.ediff1d()`
+- `np.pad()`, `np.roll()`, `np.flip()`, `np.rot90()`
+- `np.triu()`, `np.tril()`, `np.diagflat()`
+- `np.select()`, `np.piecewise()`
+- `np.array_split()`, `np.hsplit()`, `np.vsplit()`, `np.dsplit()`
+- `np.cumsum()`, `np.cumprod()`
+- `np.resize()`, `np.append()`, `np.insert()`, `np.delete()`
+
+---
+
 ## Common Interview Questions & Answers
 
 1. **Q: What is the difference between a Python list and NumPy array?**
@@ -74,6 +158,8 @@ col = arr[:, 1]  # [2, 5, 8]
 4. **Q: What is the difference between np.zeros() and np.empty()?**
    - A: `np.zeros()` creates an array filled with zeros, while `np.empty()` creates an array with uninitialized memory (faster but contains random values).
 
+---
+
 ## Practice Questions (Try These!)
 
 1. Create a function that finds the second largest element in a 2D array without using sort.
@@ -85,6 +171,8 @@ col = arr[:, 1]  # [2, 5, 8]
 4. Create a function to rotate a matrix 90 degrees clockwise without using additional memory.
 
 5. Write a function to find the peaks (elements greater than their neighbors) in a 1D array.
+
+---
 
 ## Advanced Topics for Practice
 
@@ -109,6 +197,8 @@ col = arr[:, 1]  # [2, 5, 8]
 # Standard deviation
 # Correlation and covariance
 ```
+
+---
 
 ## Performance Tips
 1. Use vectorized operations instead of loops
