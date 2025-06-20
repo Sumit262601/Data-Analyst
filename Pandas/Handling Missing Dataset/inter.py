@@ -11,3 +11,6 @@ df = pd.DataFrame(data)
 print(df)
 
 # linear, ploynomial, time
+
+df.interpolate(method="linear", axis=0, inplace=True)
+print(df)
