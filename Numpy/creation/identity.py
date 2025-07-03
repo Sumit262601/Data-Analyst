@@ -6,7 +6,7 @@
 
 import numpy as np
 
-identity_matrix = np.eye()
+identity_matrix = np.eye(4)
 print("Identity Matrix:", identity_matrix)
 
 # Output:

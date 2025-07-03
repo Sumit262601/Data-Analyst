@@ -1,41 +1,33 @@
 """
-Reshaping in Python NumPy - Comprehensive Guide
+NumPy Reshaping: Basic to Advanced Guide
 
-Definition: -
-Reshaping in Python (specifically with NumPy) is the process of reorganizing array elements into a new shape while keeping the total number of elements constant. It allows you to transform the dimensional structure of an array without changing its data.
+Introduction:
+Reshaping in NumPy refers to changing the shape (dimensions) of an array without changing its data. This is crucial for data preprocessing, machine learning, image processing, and scientific computing.
 
-Key Concepts: -
-    The new shape must be compatible with the original shape
-    Total elements must remain the same
-    Used for data restructuring in machine learning and data analysis
-    Reshaping can be done using methods like reshape(), resize(), and ravel()
-    The choice of method depends on the specific requirements (e.g., in-place vs. new array)
-    Always ensure that the total number of elements remains constant during reshaping
-    Be mindful of the data layout (C-contiguous vs. F-contiguous) when reshaping
-    Consider using the -1 parameter for automatic dimension calculation
-    
-Common Methods: -
-- reshape(): Returns a new array with the specified shape
-- resize(): Modifies the array in-place to the new shape
-- ravel(): Flattens the array into a 1D array
-- flatten(): Returns a copy of the array collapsed into 1D
-- transpose(): Permutes the dimensions of the array
-- swapaxes(): Interchanges two axes of the array
-- squeeze(): Removes single-dimensional entries from the shape of an array
-- expand_dims(): Adds a new axis to the array, increasing its dimensionality
-- stack(): Joins a sequence of arrays along a new axis
-- hstack(): Stacks arrays in sequence horizontally (column-wise)
-- vstack(): Stacks arrays in sequence vertically (row-wise)
+Key Concepts:
+- The new shape must contain the same total number of elements as the original.
+- Reshaping is used for data restructuring, feature engineering, and batch processing.
+- Methods include: reshape(), resize(), ravel(), flatten(), transpose(), swapaxes(), squeeze(), expand_dims(), stack(), hstack(), vstack().
+- Use the -1 parameter for automatic dimension inference.
+- Be aware of memory layout (C-contiguous vs. F-contiguous).
+- Reshaping usually returns a view, not a copy (unless not possible).
 
+Common Methods:
+- reshape(): Returns a new array with the specified shape.
+- resize(): Changes the shape in-place (can alter total elements).
+- ravel(): Flattens the array to 1D (returns a view if possible).
+- flatten(): Flattens to 1D (always returns a copy).
+- transpose(): Permutes array axes.
+- swapaxes(): Swaps two axes.
+- squeeze(): Removes single-dimensional entries.
+- expand_dims(): Adds a new axis.
+- stack(), hstack(), vstack(): Combine arrays along new or existing axes.
 
-NOTE: Reshaping does not change the data, only the view of the data in memory. It is focused they cannot be copy any array data, only the view of the data in memory.
-
+NOTE: Reshaping changes the view of data in memory, not the data itself (unless a copy is required).
 
 """
 
-"""Common Reshaping Operations
-1. Basic Reshaping Example"""
-
+# Basic Reshaping Example
 import numpy as np
 
 # Create a 1D array
@@ -44,75 +36,99 @@ arr = np.array([1, 2, 3, 4, 5, 6])
 # Reshape to 2x3 matrix
 matrix = arr.reshape(2, 3)
 print("Reshaped Matrix:\n", matrix)
-# Result:
-# [[1, 2, 3],
-#  [4, 5, 6]]
+# Output:
+# [[1 2 3]
+#  [4 5 6]]
 
-# 2. Using -1 in Reshape
+# Using -1 in Reshape (automatic dimension calculation)
+arr2 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+reshaped_auto = arr2.reshape(4, -1)  # NumPy infers columns
+print("Reshaped with -1:\n", reshaped_auto)
+# Output:
+# [[1 2]
+#  [3 4]
+#  [5 6]
+#  [7 8]]
 
-arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+# Flattening arrays
+flat1 = arr2.ravel()    # Returns a flattened view
+flat2 = arr2.flatten()  # Returns a flattened copy
+print("Ravel:", flat1)
+print("Flatten:", flat2)
 
-# NumPy automatically calculates the size for -1
-reshaping = arr.reshape(-1, 1)  # Reshapes to 4x2 reshaping
-print("Reshaped with -1:\n", reshaping)
+# Transpose and swapaxes
+arr3 = np.arange(8).reshape(2, 2, 2)
+print("Original shape:", arr3.shape)
+print("Transposed shape:", arr3.transpose(1, 0, 2).shape)
+print("Swapaxes shape:", np.swapaxes(arr3, 0, 2).shape)
 
-# Result:
-# [[1, 2],
-#  [3, 4],
-#  [5, 6],
-#  [7, 8]]
+# Squeeze and expand_dims
+arr4 = np.array([[[1, 2, 3]]])
+print("Squeezed shape:", np.squeeze(arr4).shape)
+print("Expanded dims shape:", np.expand_dims(arr, axis=0).shape)
 
+# Stacking examples
+a = np.array([1, 2])
+b = np.array([3, 4])
+print("Stack:\n", np.stack((a, b)))
+print("HStack:\n", np.hstack((a, b)))
+print("VStack:\n", np.vstack((a, b)))
 
 """
 Interview Questions
+
 Q: What's the difference between reshape() and resize()?
+A: reshape() returns a new array with the desired shape (original unchanged, view if possible). resize() changes the shape in-place and can change the total number of elements (fills with zeros if needed).
 
-A: reshape() returns a new array with modified shape while maintaining the same data
-resize() modifies the array in-place and can change the total number of elements
 Q: Can you reshape an array of 10 elements into a 3x4 matrix?
+A: No, because 3x4=12 elements, which does not match the original 10.
 
-A: No, because 3x4=12 elements, which doesn't match the original 10 elements
 Q: What does reshape(-1, 1) do?
+A: Converts a 1D array into a column vector (NumPy infers the number of rows).
 
-A: It converts an array into a column vector, where -1 automatically calculates the number of rows
 Advanced Example
 """
 
 # Create a 3D array
-arr = np.array([[1, 2, 3, 4],
-                [5, 6, 7, 8],
-                [9, 10, 11, 12]])
+arr5 = np.array([[1, 2, 3, 4],
+                 [5, 6, 7, 8],
+                 [9, 10, 11, 12]])
 
 # Reshape to different dimensions
-reshaped_1 = arr.reshape(2, 2, 3)  # 2x2x3
-reshaped_2 = arr.reshape(-1)        # Flattens to 1D
-reshaped_3 = arr.reshape(4, 3)      # 4x3 matrix
+reshaped_1 = arr5.reshape(2, 2, 3)  # 2x2x3
+reshaped_2 = arr5.reshape(-1)       # Flatten to 1D
+reshaped_3 = arr5.reshape(4, 3)     # 4x3 matrix
 
-
-print("\nOriginal shape:", arr.shape)
-print(arr)
-
+print("\nOriginal shape:", arr5.shape)
+print(arr5)
 print("\nReshaped to 2x2x3:", reshaped_1.shape)
 print(reshaped_1)
-
 print("\nFlattened shape:", reshaped_2.shape)
 print(reshaped_2)
-
 print("\nReshaped to 4x3:", reshaped_3.shape)
 print(reshaped_3)
 
 """
 Common Use Cases
-    Feature engineering in machine learning
-    Image processing (reshaping pixel matrices)
-    Time series data restructuring
-    Batch processing in deep learning
+- Feature engineering in machine learning
+- Image processing (reshaping pixel matrices)
+- Time series data restructuring
+- Batch processing in deep learning
 
 Best Practices
-    Always verify shape compatibility before reshaping
-    Use -1 when one dimension is flexible
-    Consider using ravel() for flattening arrays
-    Check array contiguity with is_contiguous()
+- Always verify shape compatibility before reshaping
+- Use -1 for flexible dimensions
+- Use ravel() for flattening if a view is acceptable
+- Check array contiguity with .flags['C_CONTIGUOUS']
+- Prefer built-in NumPy methods for performance
 
-This knowledge is essential for data preprocessing, machine learning, and array manipulations in Python.
+This guide covers essential reshaping operations for effective data manipulation in NumPy.
 """
+
+# Additional Example with resize()
+arr = np.array([1, 2, 3, 4])
+arr.resize((2, 3))
+print(arr)
+# Output:
+# [[1 2 3]
+#  [4 1 2]]

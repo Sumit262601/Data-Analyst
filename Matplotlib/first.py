@@ -6,7 +6,7 @@ y = (0, 2, 3, 5, 11, 8, 10)
 
 plt.plot(x, y, color='orange', linestyle='solid', linewidth=2, label='Total no of Sales' ,marker='o')
 
-plt.title("Bakery Sales in this weeks") ## FOR TITLE 
+plt.title("Bakery Sales in this weeks") ## FOR TITLE
 
 plt.xlabel("Days of the week") ## FOR xLABEL
 
@@ -20,7 +20,7 @@ plt.grid(color= 'gray', linestyle=':', linewidth=1) ## FOR BETTER visulization
 
 # plt.ylim(1,8) ## FOR  LIMITAION IN y axis
 
-plt.xticks([1,2,3,4,5,6,7], ['Mo', 'Tu', 'We', 'Th', 'Fi', 'St', 'Sn' ])
+plt.xticks([1,2,3,4,5,6,7], ['Mo', 'Tu', 'We', 'Th', 'Fi', 'St', 'Sn'])
 
 plt.show() ## FOR SHOW() IS A METHOD
 
