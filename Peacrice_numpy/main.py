@@ -14,3 +14,12 @@ print(random_array)
 # Change the shape of a 1D array with 12 elements into a 3x4 matrix.
 matrix = array_1.reshape(3,3)
 print(matrix)
+
+# Create an array of 5 elements all set to the same value (e.g., 7).
+full_array = np.full(5, 7)
+print(full_array)
+
+
+# # Example: 3x3 matrix of random integers from 10 to 49
+matrix = np.random.randint(10, 50, size=(3, 3))
+print(matrix)
