@@ -4,7 +4,7 @@ import numpy as np
 x = ('Mon', 'Tue', 'Wed', 'Thu', 'Fir', 'Sat', 'Sun')
 y = (0, 2, 3, 5, 11, 8, 10)
 
-plt.plot(x, y, color='orange', linestyle='solid', linewidth=2, label='Total no of Sales' ,marker='o')
+plt.plot(x, y, color='orange', linestyle='--', linewidth=2, label='Total no of Sales', marker='^')
 
 plt.title("Bakery Sales in this weeks") ## FOR TITLE
 
@@ -14,7 +14,7 @@ plt.ylabel("Sales Per Day") ## FOR yLABEL
 
 plt.legend(loc='upper left', fontsize=12) ## FOR SHOW LABELS IN YOUR LOCTIONS
 
-plt.grid(color= 'gray', linestyle=':', linewidth=1) ## FOR BETTER visulization
+plt.grid(color= 'gray', linestyle='solid', linewidth=1) ## FOR BETTER visulization
 
 # plt.xlim(1,5) ## FOR LIMITAION IN x axis
 

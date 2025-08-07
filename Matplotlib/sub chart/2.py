@@ -19,4 +19,5 @@ ax[2].set_title('Pie Chart')
 fig.suptitle('Comparision of Line & bar chart')
 
 plt.tight_layout()
+plt.savefig('multi_chart.png', dpi=300, bbox_inches='tight')
 plt.show()
